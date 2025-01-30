@@ -1,4 +1,4 @@
-import javax.swing.JFrame;
+ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.io.*;
 
@@ -16,7 +16,7 @@ public class FollowBackViewer
 		int option = JOptionPane.showOptionDialog(null, msg, "FollowBack", 2, 3, null, be, 0);
 		if (option == 0) {
 			JOptionPane.showMessageDialog(null, 
-			"ok! follow these steps on your desktop:\ngo to this link: https://accountscenter.instagram.com/info_and_permissions/ (no you won't get a virus trustmebro)\nclick on \"Download your information\", then \"Download or transfer information\"\nselect the account(s) you want to use, and hit next\nselect \"Some of your information\", then scroll down click \"Followers and following\" under the \"Connections\" category, and hit next\nclick \"Download to device\"\nin the \"Data range\" and \"Format\" drop-downs that follow , select the \"All Time\" and \"JSON\" options and hit save on both. the other two drop-downs are irrelevant.\nhit \"Create Files\" and you wait!");
+			"ok! follow these steps on your desktop:\ngo to this link: https://accountscenter.instagram.com/info_and_permissions/ (no you won't get a virus trustmebro)\nclick on \"Download your information\", then \"Download or transfer information\"\nselect the account(s) you want to use, and hit next\nselect \"Some of your information\", then scroll down click \"Followers and following\" under the \"Connections\" category, and hit next\nclick \"Download to device\"\nin the \"Data range\" and \"Format\" drop-downs that follow , select the \"All Time\" and \"JSON\" options and hit save on both. the other two drop-downs are irrelevant.\nhit \"Create Files\" wait, and hit \"Download\" when your files are ready!");
 	}
 
 		String following = getString(
@@ -25,6 +25,7 @@ public class FollowBackViewer
 				"Enter follower file name:");
 		
 		FollowBack ig = new FollowBack(following, followers);
+		ig.toFile();
 				JOptionPane.showMessageDialog(null, 
 				"wow! " + ig.getGhosters() + " accounts don't follow you back!\naccounts printed to the file 'out.txt'.");
 		
